@@ -43,7 +43,6 @@ body{
 nav{
 
     width:100%;
-
     padding:20px 8%;
 
     display:flex;
@@ -57,8 +56,11 @@ nav{
     z-index:1000;
 
     background:rgba(0,0,0,0.35);
-
     backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    transition:all .4s ease;
 }
 
 .logo{
@@ -69,6 +71,8 @@ nav{
     color:#d4af37;
 
     letter-spacing:3px;
+
+    text-shadow:0 0 15px rgba(212,175,55,.35);
 }
 
 nav ul{
@@ -86,14 +90,16 @@ nav ul li a{
 
     text-decoration:none;
 
-    transition:0.3s;
-
     font-size:16px;
+
+    position:relative;
+
+    transition:all .35s ease;
 }
 
-nav ul li a:hover{
-    color:#d4af37;
-}
+
+
+
 
 
 /* =========================
@@ -199,6 +205,7 @@ nav ul li a:hover{
    HERO CONTENT
 ========================= */
 
+
 .hero-content{
 
     position:relative;
@@ -215,6 +222,8 @@ nav ul li a:hover{
     text-align:center;
 
     padding:20px;
+
+    animation:fadeUp 1.2s ease;
 }
 
 .hero-content h1{
@@ -252,7 +261,6 @@ nav ul li a:hover{
 
     flex-wrap:wrap;
 }
-
 .btn{
 
     padding:14px 35px;
@@ -261,9 +269,13 @@ nav ul li a:hover{
 
     text-decoration:none;
 
-    transition:0.3s;
+    transition:all .35s ease;
 
     font-size:16px;
+
+    display:inline-block;
+
+    will-change:transform;
 }
 
 .btn-gold{
@@ -274,10 +286,11 @@ nav ul li a:hover{
 
     font-weight:bold;
 }
-
 .btn-gold:hover{
 
-    transform:scale(1.05);
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(212,175,55,.25);
 }
 
 .btn-dark{
@@ -294,9 +307,11 @@ nav ul li a:hover{
     background:#d4af37;
 
     color:black;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(212,175,55,.25);
 }
-
-
 /* =========================
    LOCATION BUTTON
 ========================= */
@@ -370,6 +385,18 @@ nav ul li a:hover{
     padding:50px;
 
     border:1px solid rgba(255,255,255,0.08);
+
+    transition:all .4s ease;
+}
+
+
+.contact-box:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(212,175,55,.35);
+
+    box-shadow:0 15px 40px rgba(212,175,55,.12);
 }
 
 .contact h2{
@@ -402,7 +429,7 @@ nav ul li a:hover{
 
     padding:18px;
 
-    border:none;
+    border:1px solid transparent;
 
     border-radius:12px;
 
@@ -413,6 +440,18 @@ nav ul li a:hover{
     font-size:16px;
 
     outline:none;
+
+    transition:all .35s ease;
+}
+
+.contact input:focus,
+.contact select:focus{
+
+    border-color:#d4af37;
+
+    box-shadow:0 0 15px rgba(212,175,55,.25);
+
+    background:rgba(255,255,255,0.12);
 }
 
 .contact button{
@@ -712,9 +751,6 @@ function toggleMenu(){
     document.getElementById("navMenu").classList.toggle("active");
 }
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
