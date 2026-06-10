@@ -251,6 +251,7 @@ nav ul li a:hover{
 
 .card{
 
+
     background:rgba(0,0,0,0.35);
 
     backdrop-filter:blur(8px);
@@ -263,14 +264,29 @@ nav ul li a:hover{
 
     border:1px solid rgba(255,255,255,0.08);
 }
-
 .card:hover{
-
-    transform:translateY(-10px);
-
-    border-color:#d4af37;
+transform:translateY(-12px) scale(1.02);
+box-shadow:
+0 20px 40px rgba(0,0,0,.45),
+0 0 25px rgba(212,175,55,.25);
 }
 
+
+.card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:3px;
+background:linear-gradient(
+90deg,
+transparent,
+#d4af37,
+transparent
+);
+z-index:5;
+}
 
 /* =========================
    CARD IMAGE
@@ -319,16 +335,17 @@ nav ul li a:hover{
 ========================= */
 
 .price{
-
-    font-size:22px;
-
-    color:white;
-
-    margin-bottom:20px;
-
-    font-weight:bold;
+background:rgba(212,175,55,.08);
+border:1px solid rgba(212,175,55,.25);
+padding:12px;
+text-align:center;
+border-radius:14px;
+font-size:22px;
+font-weight:700;
+color:#d4af37;
+margin-bottom:20px;
+backdrop-filter:blur(5px);
 }
-
 
 /* =========================
    BUTTON
@@ -356,7 +373,16 @@ nav ul li a:hover{
     transform:scale(1.05);
 }
 
+.btn-main{
+background:#d4af37;
+color:#000;
+transition:.3s;
+}
 
+.btn-main:hover{
+transform:translateY(-2px);
+box-shadow:0 0 15px rgba(212,175,55,.45);
+}
 /* =========================
    FOOTER
 ========================= */
@@ -394,6 +420,15 @@ footer{
 
 }
 
+.page-title h1::after{
+content:'';
+display:block;
+width:120px;
+height:3px;
+margin:18px auto 0;
+background:#d4af37;
+border-radius:20px;
+}
 </style>
 
 </head>
@@ -501,34 +536,38 @@ Porto Golf *
 
 </div>
 
-
 <!-- PROJECT 2 -->
 
 <div class="card">
 
-<img src="img/project2.jpg">
+    <img src="img/project2.jpg" alt="North Coast Project">
 
-<div class="card-content">
+    <div class="card-content">
 
-<h2>
- @ North Cost
-</h2>
+        <h2>At North Coast</h2>
 
-<p>
-وحدات سكنية واستثمارية بإطلالات رائعة وخدمات متكاملة.
-</p>
+        <h3>
+<h3>
+مع خطة سداد مميزة <br>
+بمقدم 10% فقط وأقساط حتى 12 سنة
+</h3>
+        <p>
+            وحدات سكنية واستثمارية بإطلالات رائعة وخدمات متكاملة.
+        </p>
 
-<div class="price">
-يبدأ من 3,200,000 ج
+        <div class="price">
+            يبدأ من 3,500,000 ج
+        </div>
+
+        <a href="#" class="btn">
+            تفاصيل المشروع
+        </a>
+
+    </div>
+
 </div>
 
-<a href="#" class="btn">
-تفاصيل المشروع
-</a>
 
-</div>
-
-</div>
 
 
 <!-- PROJECT 3 -->
@@ -543,12 +582,29 @@ Porto Golf *
 The Island Marina 5
 </h2>
 
+
+
+
+<h3>
+مع خطة سداد مميزة <br>
+بمقدم 5% فقط وأقساط حتى 10 سنوات
+</h3>
+
+
+
+
+
+
+
+
 <p>
 استمتع بحياة ساحلية راقية بأفضل الخدمات والمرافق الحديثة.
 </p>
 
 <div class="price">
-يبدأ من 1,900,000 ج
+يبدا من 
+
+7,900,000
 </div>
 
 <a href="#" class="btn">
