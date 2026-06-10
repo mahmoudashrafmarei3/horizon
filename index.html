@@ -458,31 +458,60 @@ footer{
 }
 
 
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:#d4af37;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media(max-width:768px){
 
     nav{
-        flex-direction:column;
-        padding:15px;
+        padding:15px 20px;
+        flex-wrap:wrap;
     }
 
     .logo{
         font-size:22px;
-        margin-bottom:12px;
+    }
+
+    .menu-toggle{
+        display:block;
     }
 
     nav ul{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        margin-top:20px;
+        gap:18px;
+    }
+
+    nav ul.active{
         display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
     }
 
     nav ul li a{
-        font-size:14px;
+        display:block;
+        padding:10px;
+        font-size:16px;
     }
 
     .hero-content h1{
@@ -500,7 +529,6 @@ footer{
     .contact-box{
         padding:35px 25px;
     }
-
 }
 
 </style>
@@ -515,12 +543,15 @@ footer{
 ========================= -->
 
 <nav>
-
 <div class="logo">
 HORIZON
 </div>
 
-<ul>
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<ul id="navMenu">
 
 <li>
 <a href="index.html">
@@ -670,12 +701,20 @@ HORIZON
 <!-- =========================
      FOOTER
 ========================= -->
-
 <footer>
 
 © 2026 Horizon Real Estate - All Rights Reserved
 
 </footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
