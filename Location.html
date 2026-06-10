@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فروعنا - Horizon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.hero{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    z-index:-2;
+
+    overflow:hidden;
+}
+
+.slide{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+
+    animation:zoom 18s infinite;
+}
+
+.slide::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.65);
+}
+
+.slide1{
+    background-image:url('img/hero1.jpg');
+    animation-delay:0s;
+}
+
+.slide2{
+    background-image:url('img/hero2.jpg');
+    animation-delay:6s;
+}
+
+.slide3{
+    background-image:url('img/hero3.jpg');
+    animation-delay:12s;
+}
+
+@keyframes zoom{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    40%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+
+    width:100%;
+
+    padding:20px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#d4af37;
+
+    letter-spacing:3px;
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+}
+
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+
+/* =========================
+   LOCATION SECTION
+========================= */
+
+.location-section{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:140px 8% 80px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:10;
+}
+
+.location-section h1{
+
+    font-size:60px;
+
+    color:#d4af37;
+
+    margin-bottom:60px;
+}
+
+
+/* =========================
+   LOCATION GRID
+========================= */
+
+.location-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+}
+
+
+/* =========================
+   LOCATION CARD
+========================= */
+
+.location-card{
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.3s;
+}
+
+.location-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#d4af37;
+}
+
+.location-card h2{
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+
+    font-size:30px;
+}
+
+.location-card p{
+
+    color:#ddd;
+
+    margin-bottom:25px;
+
+    line-height:2;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.location-btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    background:#d4af37;
+
+    color:black;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.location-btn:hover{
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#888;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .location-section h1{
+        font-size:42px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- الخلفية -->
+
+<section class="hero">
+
+<div class="slide slide1"></div>
+<div class="slide slide2"></div>
+<div class="slide slide3"></div>
+
+</section>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+HORIZON
+</div>
+
+<ul>
+
+<li>
+<a href="index.html">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="About.html">
+عن الشركة
+</a>
+</li>
+
+<li>
+<a href="projects.html">
+المشروعات
+</a>
+</li>
+
+<li>
+<a href="Location.html">
+📍 فروعنا
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+تواصل
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- LOCATIONS -->
+
+<section class="location-section">
+
+<h1>
+📍 فروعنا
+</h1>
+
+<div class="location-grid">
+
+
+<!-- فرع سابا باشا -->
+
+<div class="location-card">
+
+<h2>
+فرع سابا باشا
+</h2>
+
+<p>
+الإسكندرية - سابا باشا
+</p>
+
+<a 
+href="https://www.google.com/maps?q=31.238428,29.955773"
+target="_blank"
+class="location-btn"
+>
+
+احصل على الاتجاهات
+
+</a>
+
+</div>
+
+
+<!-- فرع ثاني -->
+
+<div class="location-card">
+
+<h2>
+الفرع الثاني
+</h2>
+
+<p>
+أضف عنوان الفرع هنا
+</p>
+
+<a 
+href="https://www.google.com/maps"
+target="_blank"
+class="location-btn"
+>
+
+احصل على الاتجاهات
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Horizon Real Estate - All Rights Reserved
+
+</footer>
+
+</body>
+</html>

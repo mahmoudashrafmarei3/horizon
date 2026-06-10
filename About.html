@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - Horizon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   BACKGROUND HERO
+========================= */
+
+.hero{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    z-index:-2;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   HERO SLIDES
+========================= */
+
+.slide{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+
+    animation:zoom 18s infinite;
+}
+
+.slide::before{
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.6);
+}
+
+
+/* =========================
+   HERO IMAGES
+========================= */
+
+.slide1{
+    background-image:url('img/hero1.jpg');
+    animation-delay:0s;
+}
+
+.slide2{
+    background-image:url('img/hero2.jpg');
+    animation-delay:6s;
+}
+
+.slide3{
+    background-image:url('img/hero3.jpg');
+    animation-delay:12s;
+}
+
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+@keyframes zoom{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    40%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+
+    color:#d4af37;
+
+    letter-spacing:3px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section{
+
+    width:100%;
+
+    padding:140px 8% 80px;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   ABOUT BOX
+========================= */
+
+.about-box{
+
+    width:100%;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    padding:60px;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+.about-box h1{
+
+    text-align:center;
+
+    color:#d4af37;
+
+    font-size:60px;
+
+    margin-bottom:20px;
+}
+
+.about-box p{
+
+    color:#ddd;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+}
+
+
+/* =========================
+   INFO CARDS
+========================= */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+}
+
+.info-card{
+
+    background:rgba(255,255,255,0.05);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.3s;
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+}
+
+.info-card h2{
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+}
+
+.info-card p{
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#aaa;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .about-box{
+        padding:35px 25px;
+    }
+
+    .about-box h1{
+        font-size:42px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     BACKGROUND HERO
+========================= -->
+
+<section class="hero">
+
+<div class="slide slide1"></div>
+<div class="slide slide2"></div>
+<div class="slide slide3"></div>
+
+</section>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+<div class="logo">
+HORIZON
+</div>
+
+<ul>
+
+<li>
+<a href="index.html">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="projects.html">
+المشروعات
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+تواصل
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section class="about-section">
+
+<div class="about-box">
+
+<h1>
+Horizon Real Estate 
+</h1>
+
+<p>
+شركة Horizon للتسويق والاستثمار العقاري تهدف إلى تقديم أفضل الفرص العقارية والسكنية والاستثمارية داخل السوق المصري بأعلى مستوى من الاحترافية والثقة.
+</p>
+
+<p>
+نعمل على مساعدة العملاء في اختيار المشروع المناسب سواء للاستثمار أو السكن أو المصيف مع توفير أفضل أنظمة السداد والتقسيط.
+</p>
+
+
+<!-- INFO CARDS -->
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h2>
+رؤيتنا
+</h2>
+
+<p>
+أن نكون من أفضل شركات التسويق العقاري في مصر من خلال تقديم تجربة احترافية متكاملة.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h2>
+هدفنا
+</h2>
+
+<p>
+مساعدة العملاء للوصول لأفضل فرصة عقارية مناسبة لاحتياجاتهم وميزانيتهم.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h2>
+خدماتنا
+</h2>
+
+<p>
+استشارات عقارية - استثمار - بيع وشراء - تسويق للمشروعات الكبرى داخل مصر.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 Horizon Real Estate - All Rights Reserved
+
+</footer>
+
+</body>
+</html>

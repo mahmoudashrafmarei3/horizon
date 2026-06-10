@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - Horizon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   BACKGROUND HERO
+========================= */
+
+.hero{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    z-index:-2;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   HERO SLIDES
+========================= */
+
+.slide{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+
+    animation:zoom 18s infinite;
+}
+
+.slide::before{
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.6);
+}
+
+
+/* =========================
+   HERO IMAGES
+========================= */
+
+.slide1{
+    background-image:url('img/hero1.jpg');
+    animation-delay:0s;
+}
+
+.slide2{
+    background-image:url('img/hero2.jpg');
+    animation-delay:6s;
+}
+
+.slide3{
+    background-image:url('img/hero3.jpg');
+    animation-delay:12s;
+}
+
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+@keyframes zoom{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    40%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+
+    color:#d4af37;
+
+    letter-spacing:3px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:140px 8% 80px;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   CONTACT BOX
+========================= */
+
+.contact-box{
+
+    width:100%;
+    max-width:700px;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    padding:50px;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+.contact-box h1{
+
+    text-align:center;
+
+    color:#d4af37;
+
+    font-size:55px;
+
+    margin-bottom:15px;
+}
+
+.contact-box p{
+
+    text-align:center;
+
+    color:#ddd;
+
+    margin-bottom:40px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+    outline:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-size:16px;
+}
+
+.contact-form textarea{
+    min-height:150px;
+    resize:none;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.contact-form button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#d4af37;
+
+    color:black;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    transform:scale(1.03);
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.whatsapp:hover{
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#aaa;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .contact-box{
+        padding:35px 25px;
+    }
+
+    .contact-box h1{
+        font-size:40px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     BACKGROUND HERO
+========================= -->
+
+<section class="hero">
+
+<div class="slide slide1"></div>
+<div class="slide slide2"></div>
+<div class="slide slide3"></div>
+
+</section>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+<div class="logo">
+HORIZON
+</div>
+
+<ul>
+
+<li>
+<a href="index.html">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="projects.html">
+المشروعات
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+تواصل
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+
+<section class="contact-section">
+
+<div class="contact-box">
+
+<h1>
+تواصل معنا
+</h1>
+
+<p>
+اترك بياناتك وسيتم التواصل معك في أقرب وقت بواسطة فريق Horizon
+</p>
+
+
+<form class="contact-form">
+
+<input type="text" placeholder="الاسم بالكامل">
+
+<input type="tel" placeholder="رقم الهاتف">
+
+<select>
+
+<option>
+نوع الاهتمام
+</option>
+
+<option>
+استثمار
+</option>
+
+<option>
+سكن
+</option>
+
+<option>
+مصيف
+</option>
+
+</select>
+
+<textarea placeholder="اكتب استفسارك"></textarea>
+
+<button type="submit">
+إرسال البيانات
+</button>
+
+</form>
+
+
+<a href="https://wa.me/201000000000" class="whatsapp">
+تواصل عبر واتساب
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 Horizon Real Estate - All Rights Reserved
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects - Horizon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   BACKGROUND HERO
+========================= */
+
+.hero{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    z-index:-2;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   HERO SLIDES
+========================= */
+
+.slide{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+
+    animation:zoom 18s infinite;
+}
+
+.slide::before{
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.55);
+}
+
+
+/* =========================
+   HERO IMAGES
+========================= */
+
+.slide1{
+    background-image:url('img/hero1.jpg');
+    animation-delay:0s;
+}
+
+.slide2{
+    background-image:url('img/hero2.jpg');
+    animation-delay:6s;
+}
+
+.slide3{
+    background-image:url('img/hero3.jpg');
+    animation-delay:12s;
+}
+
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+@keyframes zoom{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    40%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+
+    color:#d4af37;
+
+    letter-spacing:3px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
+
+    width:100%;
+
+    padding-top:140px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:10;
+}
+
+.page-title h1{
+    font-size:70px;
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+}
+
+.page-title p{
+    font-size:22px;
+
+    color:#ddd;
+
+    margin-bottom:60px;
+}
+
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects{
+
+    width:100%;
+
+    padding:0 8% 80px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.card{
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:0.4s;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#d4af37;
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card img{
+
+    width:100%;
+    height:240px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h2{
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+}
+
+.card-content p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price{
+
+    font-size:22px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    background:#d4af37;
+    color:black;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#aaa;
+
+    position:relative;
+    z-index:10;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .page-title h1{
+        font-size:45px;
+    }
+
+    .page-title p{
+        font-size:18px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     BACKGROUND HERO
+========================= -->
+
+<section class="hero">
+
+<div class="slide slide1"></div>
+<div class="slide slide2"></div>
+<div class="slide slide3"></div>
+
+</section>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+<div class="logo">
+HORIZON
+</div>
+
+<ul>
+
+<li>
+<a href="index.html">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="projects.html">
+المشروعات
+</a>
+</li>
+
+<li>
+<a href="index.html#contact">
+تواصل
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =========================
+     PAGE TITLE
+========================= -->
+
+<section class="page-title">
+
+<h1>
+مشروعاتنا
+</h1>
+
+<p>
+اكتشف أفضل الفرص العقارية والاستثمارية
+</p>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS SECTION
+========================= -->
+
+<section class="projects">
+
+
+<!-- PROJECT 1 -->
+
+<div class="card">
+
+<img src="img/project1.jpg">
+
+<div class="card-content">
+
+<h2>
+Porto Golf *
+</h2>
+
+<p>
+مشروع متكامل الخدمات  في الكيلو 107   امام ابراج العلمين الجديده 
+</p>
+
+<div class="price">
+يبدأ من 1,500,000 ج
+</div>
+
+<a href="#" class="btn">
+تفاصيل المشروع
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="card">
+
+<img src="img/project2.jpg">
+
+<div class="card-content">
+
+<h2>
+ @ North Cost
+</h2>
+
+<p>
+وحدات سكنية واستثمارية بإطلالات رائعة وخدمات متكاملة.
+</p>
+
+<div class="price">
+يبدأ من 3,200,000 ج
+</div>
+
+<a href="#" class="btn">
+تفاصيل المشروع
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="card">
+
+<img src="img/project3.jpg">
+
+<div class="card-content">
+
+<h2>
+The Island Marina 5
+</h2>
+
+<p>
+استمتع بحياة ساحلية راقية بأفضل الخدمات والمرافق الحديثة.
+</p>
+
+<div class="price">
+يبدأ من 1,900,000 ج
+</div>
+
+<a href="#" class="btn">
+تفاصيل المشروع
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 Horizon Real Estate - All Rights Reserved
+
+</footer>
+
+</body>
+</html>
