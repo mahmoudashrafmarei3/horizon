@@ -389,7 +389,6 @@ nav ul li a{
     transition:all .4s ease;
 }
 
-
 .contact-box:hover{
 
     transform:translateY(-6px);
@@ -415,7 +414,7 @@ nav ul li a{
     margin-bottom:40px;
 }
 
-.contact form{
+.contact-form{
 
     display:flex;
 
@@ -424,12 +423,17 @@ nav ul li a{
     gap:20px;
 }
 
-.contact input,
-.contact select{
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+
+    width:100%;
 
     padding:18px;
 
-    border:1px solid transparent;
+    border:none;
+
+    outline:none;
 
     border-radius:12px;
 
@@ -439,28 +443,48 @@ nav ul li a{
 
     font-size:16px;
 
-    outline:none;
-
     transition:all .35s ease;
 }
 
-.contact input:focus,
-.contact select:focus{
+.contact-form textarea{
 
-    border-color:#d4af37;
+    min-height:150px;
+
+    resize:none;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
 
     box-shadow:0 0 15px rgba(212,175,55,.25);
 
     background:rgba(255,255,255,0.12);
 }
 
-.contact button{
+.contact-form select{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+}
+
+.contact-form select option{
+
+    background:#111;
+
+    color:#fff;
+}
+
+.contact-form button{
 
     padding:18px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:50px;
 
     background:#d4af37;
 
@@ -475,11 +499,30 @@ nav ul li a{
     transition:0.3s;
 }
 
-.contact button:hover{
+.contact-form button:hover{
 
     transform:scale(1.03);
 }
 
+.whatsapp{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+
+    letter-spacing:1px;
+}
 
 /* =========================
    FOOTER
@@ -687,44 +730,93 @@ HORIZON
 <!-- =========================
      CONTACT SECTION
 ========================= -->
-
 <section class="contact">
 
 <div class="contact-box">
 
-<h2>
-تواصل معنا
-</h2>
+<h2>تواصل معنا</h2>
 
 <p>
-اترك بياناتك وسيتم التواصل معك في أقرب وقت
+اترك بياناتك وسيتم التواصل معك في أقرب وقت بواسطة فريق Horizon
 </p>
 
-<form>
+<form class="contact-form"
+action="https://formsubmit.co/mahmoudashrafmarei3@gmail.com"
+method="POST">
 
-<input type="text" placeholder="الاسم">
+<input type="hidden" name="_subject" value="طلب جديد من موقع Horizon">
 
-<input type="tel" placeholder="رقم الهاتف">
+<input type="hidden" name="_captcha" value="false">
 
-<select>
+<input type="hidden" name="_template" value="table">
 
-<option>
-نوع الاهتمام
+<input
+type="text"
+name="name"
+placeholder="الاسم "
+required>
+
+<input
+type="tel"
+name="phone"
+placeholder="رقم الهاتف"
+required>
+
+<select name="project" required>
+
+<option value="">
+اختر المشروع
 </option>
 
-<option>
-استثمار
+<option value="Porto Cruise">
+Porto Cruise
 </option>
 
-<option>
-سكن
+<option value="Q Bay">
+Q Bay
 </option>
 
-<option>
-مصيف
+<option value="Q North">
+Q North
+</option>
+
+<option value="مشروع آخر">
+مشروع آخر
 </option>
 
 </select>
+
+<select name="budget">
+
+<option value="">
+الميزانية المتوقعة
+</option>
+
+<option value="أقل من 1.5 مليون">
+
+تقسيط بمقدم 400 الف 
+</option>
+
+<option value="1.5 - 3 مليون">
+1.5 - 3 مليون
+</option>
+
+<option value="3 - 5 مليون">
+3 - 5 مليون
+</option>
+
+<option value="أكثر من 5 مليون">
+أكثر من 5 مليون
+</option>
+
+</select>
+
+<textarea
+name="message"
+placeholder="اكتب استفسارك"></textarea>
+
+<input type="hidden" name="_next"
+value="https://mahmoudashrafmarei3.github.io/horizon/thanks.html">
 
 <button type="submit">
 إرسال البيانات
@@ -732,10 +824,13 @@ HORIZON
 
 </form>
 
+<a href="https://wa.me/201500529000" class="whatsapp">
+تواصل عبر واتساب
+</a>
+
 </div>
 
 </section>
-
 
 <!-- =========================
      FOOTER
