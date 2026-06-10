@@ -446,45 +446,121 @@ HORIZON
 <!-- =========================
      CONTACT SECTION
 ========================= -->
-
 <section class="contact-section">
 
 <div class="contact-box">
 
-<h1>
-تواصل معنا
-</h1>
+<h1>تواصل معنا</h1>
 
 <p>
 اترك بياناتك وسيتم التواصل معك في أقرب وقت بواسطة فريق Horizon
 </p>
 
+<form class="contact-form"
+action="https://formsubmit.co/mahmoudashrafmarei3@gmail.com"
+method="POST">
 
-<form class="contact-form">
+<input type="hidden" name="_subject" value="طلب جديد من موقع Horizon">
 
-<input type="text" placeholder="الاسم بالكامل">
+<input type="hidden" name="_captcha" value="false">
 
-<input type="tel" placeholder="رقم الهاتف">
+<input type="hidden" name="_template" value="table">
 
-<select>
+<input
+type="text"
+name="name"
+placeholder="الاسم بالكامل"
+required>
 
-<option>
-نوع الاهتمام
+<input
+type="tel"
+name="phone"
+placeholder="رقم الهاتف"
+required>
+
+<select name="project" required>
+
+<option value="">
+اختر المشروع
 </option>
 
-<option>
-استثمار
+<option value="Porto Cruise">
+Porto Cruise
 </option>
 
-<option>
-سكن
+<option value="Q Bay">
+Q Bay
 </option>
 
-<option>
-مصيف
+<option value="Q North">
+Q North
+</option>
+
+<option value="مشروع آخر">
+مشروع آخر
 </option>
 
 </select>
+
+<select name="budget">
+
+<option value="">
+الميزانية المتوقعة
+</option>
+
+<option value="أقل من 1.5 مليون">
+أقل من 1.5 مليون
+</option>
+
+<option value="1.5 - 3 مليون">
+1.5 - 3 مليون
+</option>
+
+<option value="3 - 5 مليون">
+3 - 5 مليون
+</option>
+
+<option value="أكثر من 5 مليون">
+أكثر من 5 مليون
+</option>
+
+</select>
+
+<textarea
+name="message"
+placeholder="اكتب استفسارك"></textarea>
+
+<button type="submit">
+إرسال البيانات
+</button>
+
+</form>
+
+<a href="https://wa.me/201500529000" class="whatsapp">
+تواصل عبر واتساب
+</a>
+
+</div>
+
+</section>
+<style>
+.contact-form select{
+    background:rgba(255,255,255,0.08);
+    color:white;
+    border:none;
+    outline:none;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+}
+
+.contact-form select option{
+    background:#111;
+    color:#fff;
+}
+</style>
+
+
 
 <textarea placeholder="اكتب استفسارك"></textarea>
 
@@ -493,9 +569,7 @@ HORIZON
 </button>
 
 </form>
-
-
-<a href="https://wa.me/201000000000" class="whatsapp">
+<a href="https://wa.me/201500529000" class="whatsapp">
 تواصل عبر واتساب
 </a>
 
@@ -513,6 +587,36 @@ HORIZON
 © 2026 Horizon Real Estate - All Rights Reserved
 
 </footer>
+<script>
 
+function sendToWhatsApp(event){
+
+event.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let interest = document.getElementById("interest").value;
+let message = document.getElementById("message").value;
+
+let text =
+`🏢 طلب جديد من موقع Horizon
+
+👤 الاسم: ${name}
+
+📞 الهاتف: ${phone}
+
+📌 نوع الاهتمام: ${interest}
+
+💬 الاستفسار:
+${message}`;
+
+let whatsappUrl =
+"https://wa.me/201500529000?text=" + encodeURIComponent(text);
+
+window.open(whatsappUrl, "_blank");
+
+}
+
+</script>
 </body>
 </html>
